@@ -1,0 +1,27 @@
+.home-container {
+    padding: 100px 50px;
+    text-align: center;
+    background-color: grey;
+    height: 51.2vh;
+}
+
+.up {
+    font-size: 80px;
+    line-height: 0px;
+}
+
+span {
+    font-family: Ink free;
+}
+
+.tagline {
+    line-height: 0px;
+    font-size: 25px;
+}
+
+.main2 {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}

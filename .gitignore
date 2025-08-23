@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 App.css
 App.jsx
+index.css
 dist
 dist-ssr
 *.local
