@@ -1,14 +1,82 @@
 .register-container {
     display: flex;
     justify-content: center;
+    align-items: center;
     height: 100vh;
-    padding: 10% 50px;
+    color: white;
+    /* padding: 10% 50px; */
     text-align: center;
-    background: radial-gradient(white, grey);
+    background-color: #537179;
+    /* background: radial-gradient(white, grey); */
 }
 
-form {
-    background-color: rgba(255, 255, 255, 1);
-    padding: 60px 50px;
-    width: 300px;
+form.form2 {
+    background-color: rgba(66, 88, 94, 0.6);
+    border-radius: 20px;
+    /* padding: 30px 50px; */
+    padding-top: 20px;
+    padding-bottom: 40px;
+    padding-left: 50px;
+    padding-right: 50px;
+    width: 330px;
+    margin-top: 15px;
+    height: 480px
+}
+
+.input-box {
+    width: 85%;
+    height: 30px;
+    background-color: white;
+    border: none;
+    border-bottom: 5px solid black;
+    border-left: 2px solid black;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+
+.check1 {
+    text-align: left;
+    padding-left: 5px;
+}
+
+.check-button {
+    width: 15px;
+    height: 15px;
+    margin: 0;
+    margin-right: 5px;
+}
+
+span.policy {
+    font-size: 15px;
+}
+
+.create-link {
+    margin-bottom: 15px;
+    background-color: black;
+    padding: 15px 25px;
+    border: none;
+    font-size: 13px;
+    border-radius: 5px;
+    color: white;
+    width: 97%;
+    font-family: 'Poppins', sans-serif;
+} 
+
+.create-link:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
+
+p.have {
+    margin-top: 0px;
+    margin-bottom: 30px;
+}
+
+h2.get {
+    margin-bottom: 5px;
 }

@@ -1,4 +1,5 @@
 import "../../styles/home.css"
+import { Link } from "react-router-dom";
 
 const HomeCom1 = () => {
 
@@ -10,18 +11,18 @@ const HomeCom1 = () => {
                 <div><span className='scrib'>Scrabble</span></div>
             </div>
             <nav className='navbar'>
-                <a href="" className='link started'>Get Started</a>
-                <a href="" className='link'>Login</a>
+                <Link to="/register" className="linke started">Get Started</Link>
+                <Link to="/login" className="linke">Login</Link>
             </nav>
           </div>
           <div className="home-container">
               <div className="main">
-                  <p className="up">Welcome to <span>Scrabble</span></p>
+                  <p className="up">Welcome to <span className="aside">Scrabble</span></p>
                   <p className="tagline">Your starting point for something better</p>
               </div>
               <div className="main2">
-                  <a href="" className="link started">Get Started</a>
-                  <a href="" className="link">Login</a>
+                  <Link to="/register" className="linke started">Get Started</Link>
+                  <Link to="/login" className="linke">Login</Link>
               </div>
           </div>
 

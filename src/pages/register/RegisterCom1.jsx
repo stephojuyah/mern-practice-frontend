@@ -1,24 +1,24 @@
 import '../../styles/register.css'
+import { Link } from "react-router-dom";
 
 const RegisterCom1 = () => {
     return (
         <>
         <div className='register-container'>
             <div className='form'>
-                <form action="">
-                    <h2>Getting Started</h2>
-                    <p>Already have an account? <a href="">Login</a></p>
-                    <input type="text" name='name' placeholder='Name' required/><br />
-                    <input type="email" name='email' placeholder='Email' required/><br />
-                    <input type="tel" name='tel' placeholder='Phone number' required/><br />
-                    <input type="password" name='password' placeholder='Password' required/><br />
-                    <input type="password" name='password' placeholder='Confirm password' required/>
-                    <div className='check'>
-                        <input type="checkbox" required/>
-                        <span>I accept the Terms of Use and acknowledge the <a href=''>Privacy Policy</a></span>
-                    </div>
-                    <div className='buttons'>
-                        <a href="" className='create'>Create account</a>
+                <form className='form2' action="">
+                    <h2 className='get'>Getting Started</h2>
+                    <p className='have'>Already have an account? <Link to="/login">Login</Link></p>
+                    <input className='input-box' type="text" name='name' placeholder='Name' required/><br />
+                    <input  className='input-box' type="email" name='email' placeholder='Email' required/><br />
+                    <input className='input-box' type="tel" name='tel' placeholder='Phone number' required/><br />
+                    <input className='input-box' type="password" name='password' placeholder='Password' required/><br />
+                    <input className='input-box' type="password" name='password' placeholder='Confirm password' required/>
+                    <input className='create-link' type="submit" value='Create account'/>
+                    {/* <a href="" className='create-link'>Create account</a> */}
+                    <div className='check1'>
+                        <input className='check-button' type="checkbox" required/>
+                        <span className='policy'>I accept the Terms of Use and acknowledge the <a href=''>Privacy Policy</a></span>
                     </div>
                 </form>
             </div>
