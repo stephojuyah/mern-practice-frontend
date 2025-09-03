@@ -1,4 +1,4 @@
-import '../../styles/forgot.css'
+import '../../styles/request_reset.css'
 import React, { useState } from 'react';
 
 
