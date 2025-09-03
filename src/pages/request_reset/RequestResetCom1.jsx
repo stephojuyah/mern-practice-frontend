@@ -4,7 +4,7 @@ import React, { useState } from 'react';
 
 
 
-const Forgot = () => {
+const RequestReset = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
 
@@ -35,4 +35,4 @@ const Forgot = () => {
     )
 }
 
-export default Forgot
+export default RequestReset
