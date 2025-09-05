@@ -17,7 +17,7 @@ const LoginCom1 = () => {
                        <span className="me">Remember me</span>
                     </div>
                     <input type="submit" value="Login" className="login-button"/><br />
-                    <Link to="/forgot" className="forgot">Forgot Password?</Link>
+                    <Link to="/request_otp" className="forgot">Forgot Password?</Link>
                 </form>
             </div>
 
