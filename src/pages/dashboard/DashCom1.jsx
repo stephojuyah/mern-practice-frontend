@@ -7,14 +7,14 @@ const DashCom1 = () => {
 
     const handleSubmit = (e) => {
         e.preventDefault();
-         setMessage('Note submitted successfuly');
-         setNote('');
+        setMessage('Note submitted successfuly');
+        setNote('');
     }
 
     const handleChange = (e) => {
-  setNote(e.target.value);
-  if (message) setMessage('');
-};
+        setNote(e.target.value);
+        if (message) setMessage('');
+    };
 
 
     return (

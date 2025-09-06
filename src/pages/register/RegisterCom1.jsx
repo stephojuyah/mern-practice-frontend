@@ -1,7 +1,9 @@
 import '../../styles/register.css'
 import { Link } from "react-router-dom";
+// import axios from "axios";
 
 const RegisterCom1 = () => {
+
     return (
         <>
         <div className='register-container'>
