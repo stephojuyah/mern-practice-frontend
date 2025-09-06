@@ -26,12 +26,14 @@ form.form2 {
 .input-box {
     width: 85%;
     height: 30px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.2);
+    outline: none;
     border: none;
-    border-bottom: 5px solid black;
-    border-left: 2px solid black;
+    box-shadow: none;
+    color: white;
+    height: 33px;
     margin-bottom: 20px;
-    border-radius: 10px;
+    border-radius: 7px;
     padding-left: 20px;
     padding-right: 20px;
     font-family: 'Poppins', sans-serif;
