@@ -1,0 +1,92 @@
+.home-page {
+    display: flex;
+    height: 100vh;
+    /* padding: 20px 50px; */
+    background-color: #537179;
+    color: white;
+}
+
+.section {
+    width: 80%;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 20px;
+}
+
+.side-bar {
+    width: 20%;
+    height: 100%;
+}
+
+.main {
+    display: flex;
+    height: 70%;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    flex-direction: column;
+    padding-top: 80px;
+}
+
+a.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 40px;
+}
+
+a.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+
+span.scrib-home {
+    font-size: 39px;
+    font-family: Ink free;
+}
+
+aside {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+textarea {
+    resize: none;
+    border: none;
+    outline: none;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.15);
+    font-family: 'Poppins', sans-serif;
+    width: 350px;
+    height: 150px;
+    border-radius: 10px;
+    padding: 20px 20px;
+}
+
+textarea::placeholder{
+    color: white;
+    opacity: 0.5;
+}
+
+h2.home-welcome {
+    width: 370px;
+}
+
+input.submit-note {
+    width: 100%;
+    margin-top: 15px;
+    background-color: black;
+    padding: 15px 25px;
+    border: none;
+    font-size: 13px;
+    border-radius: 5px;
+    color: white;
+}
+
+input.submit-note:hover {
+    opacity: 0.6;
+    cursor: pointer;
+}
