@@ -8,7 +8,7 @@ const DashCom1 = () => {
                 <div className="section">
                     <div><span className='scrib-home'>Scrabble</span></div>
                     <div className="main">
-                        <h2 className="home-welcome">Welcome back, <br /> Jane Doe</h2>
+                        <h2 className="home-welcome">Welcome back, <br />Jane Doe</h2>
                         <form action="" className="note-form">
                             <textarea placeholder="Leave a note" required></textarea><br />
                             <input className='submit-note' type="submit" value='Submit Note' />
@@ -31,3 +31,6 @@ const DashCom1 = () => {
     )
 }
 export default DashCom1
+
+
+
