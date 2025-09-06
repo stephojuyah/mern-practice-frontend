@@ -12,7 +12,7 @@ const RequestReset = () => {
         e.preventDefault();
         
         // You can validate or send to backend here
-        setMessage(`If this email is registered, a reset link will be sent to ${email}`);
+        setMessage(`If this email is registered, an OTP will be sent to ${email}`);
     };
 
 
@@ -23,8 +23,8 @@ const RequestReset = () => {
                 <form onSubmit={handleSubmit} className='form-f' >
                     <h2 className='forgot-text'>Forgot your password?</h2>
                     <input className='forgot-input' type="email" placeholder='Enter your Email' value={email} onChange={(e) => setEmail(e.target.value)} required/><br />
-                {message && <p className="feedback-message">{message}</p>}
-                    <input className='resend-button' type="submit" value='Send Reset Link'/>
+                    <p className="feedback-message">{message}</p>
+                    <input className='resend-button' type="submit" value='Send OTP'/>
                 </form>
 
 
