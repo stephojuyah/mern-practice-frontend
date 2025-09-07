@@ -1,7 +1,6 @@
 import '../../styles/register.css'
 import { useState } from "react"
 import { Link } from "react-router-dom";
-// import axios from "axios";
 
 const RegisterCom1 = () => {
 
@@ -44,7 +43,7 @@ const RegisterCom1 = () => {
     }
   };
 
-
+  
 
     return (
         <>
@@ -62,7 +61,7 @@ const RegisterCom1 = () => {
                     <input checked={agree} onChange={(e) => setAgree(e.target.checked)} className='create-link' type="submit" value='Create account'/>
                     {/* <a href="" className='create-link'>Create account</a> */}
                     <div className='check1'>
-                        <input onChange={(e) => setCheck(e.target.value)} className='check-button' type="checkbox" required/>
+                        <input className='check-button' type="checkbox" required/>
                         <span className='policy'>I accept the Terms of Use and acknowledge the <a href=''>Privacy Policy</a></span>
                     </div>
                 </form>
