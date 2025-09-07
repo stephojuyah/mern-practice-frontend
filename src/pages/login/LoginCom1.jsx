@@ -1,5 +1,5 @@
 import "../../styles/login.css"
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
 import { useState } from "react"
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,7 @@ const LoginCom1 = () => {
    const [password, setPassword] = useState("");
    const [msg, setMessage] = useState("");
 
-   const navigate = useNavigate();
+//    const navigate = useNavigate();
 
    const handleSubmit = async (e) => {
        e.preventDefault()
@@ -30,8 +30,8 @@ const LoginCom1 = () => {
         const data = await res.json();
         setMessage(data.msg || "Login successful");
         // localStorage.setItem("userName", data.user.name)
-        localStorage.setItem("isLoggedIn", "true");
-        navigate("/home");
+        // localStorage.setItem("isLoggedIn", "true");
+        // navigate("/home");
 
        } catch (error) {
         setMessage(error.res?.data?.msg || "Something went wrong");

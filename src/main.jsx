@@ -4,7 +4,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom'
 // import './index.css'
 // import App from './App.jsx'
 
-import ProtectedRoute from '../ProtectedRoute.jsx';
+// import ProtectedRoute from '../ProtectedRoute.jsx';
 import Register from './pages/register/Register.jsx'
 import Login from './pages/login/Login.jsx'
 import RequestReset from './pages/request_reset/RequestReset.jsx'
@@ -28,7 +28,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<Home />} />
         <Route path="/register" element={<Register />} />
         <Route path='/login' element={<Login />} />
-        <Route path='/home' element={<ProtectedRoute><Dash /></ProtectedRoute>} />
+        <Route path='/home' element={<Dash />} />
         <Route path='/request_otp' element={<RequestReset />} />
         {/* <Route path='/reset_password' element={<ResetPassword />} /> */}
       </Routes>   

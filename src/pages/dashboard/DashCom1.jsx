@@ -37,7 +37,7 @@ const DashCom1 = () => {
                     </div>
                 </div>
                 <aside className="side-bar">
-                    <nav>
+                    <nav className="homee-nav">
                         <a href="" className="nav-link first">Home</a>
                         <a href="" className="nav-link">View Profile</a>
                         <a href="" className="nav-link">View Notes</a>
