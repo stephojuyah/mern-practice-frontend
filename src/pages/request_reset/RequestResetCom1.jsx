@@ -1,18 +1,45 @@
 import '../../styles/request_reset.css'
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 
 
 
 const RequestReset = () => {
-    const [email, setEmail] = useState('');
-    const [message, setMessage] = useState('');
 
-    const handleSubmit = (e) => {
+    const navigate = useNavigate();
+
+    const [email, setEmail] = useState('');
+    const [msg, setMessage] = useState('');
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
+
+        try {
+
+        const res = await fetch("http://localhost:5000/auth/request_reset", {
+            method: "POST" ,
+            headers : {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+                email,
+            }),
+        });
+
+        const data = await res.json();
+        setMessage(data.msg || `If this email is registered, an OTP will be sent to ${email}`);
+        if (data.status === 'ok') {
+            setTimeout(() => navigate('/reset_password'), 3000);
+        } else {
+            navigate('/request_otp')
+        }
         
-        // You can validate or send to backend here
-        setMessage(`If this email is registered, an OTP will be sent to ${email}`);
+
+       } catch (error) {
+        setMessage(error.res?.data?.msg || "Something went wrong");
+       }
+
     };
 
 
@@ -23,7 +50,7 @@ const RequestReset = () => {
                 <form onSubmit={handleSubmit} className='form-f' >
                     <h2 className='forgot-text'>Forgot your password?</h2>
                     <input className='forgot-input' type="email" placeholder='Enter your Email' value={email} onChange={(e) => setEmail(e.target.value)} required/><br />
-                    <p className="feedback-message">{message}</p>
+                    <p style={{textAlign: 'center', fontSize: '10px', marginTop: '0px'}} className="feedback-message">{msg}</p>
                     <input className='resend-button' type="submit" value='Send OTP'/>
                 </form>
 

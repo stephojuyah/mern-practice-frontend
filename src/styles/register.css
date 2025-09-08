@@ -37,7 +37,10 @@ form.form2 {
     padding-left: 20px;
     padding-right: 20px;
     font-family: 'Poppins', sans-serif;
+}
 
+.input-box::placeholder {
+    opacity: 0.6;
 }
 
 

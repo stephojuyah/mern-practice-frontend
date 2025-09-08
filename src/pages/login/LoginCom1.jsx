@@ -1,5 +1,5 @@
 import "../../styles/login.css"
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useState } from "react"
 import { Link } from "react-router-dom";
 
@@ -9,7 +9,7 @@ const LoginCom1 = () => {
    const [password, setPassword] = useState("");
    const [msg, setMessage] = useState("");
 
-//    const navigate = useNavigate();
+   const navigate = useNavigate();
 
    const handleSubmit = async (e) => {
        e.preventDefault()
@@ -29,9 +29,12 @@ const LoginCom1 = () => {
 
         const data = await res.json();
         setMessage(data.msg || "Login successful");
-        // localStorage.setItem("userName", data.user.name)
-        // localStorage.setItem("isLoggedIn", "true");
-        // navigate("/home");
+        if (data.status === 'Success') {
+            setTimeout(() => navigate('/home'), 2000);
+        } else {
+            navigate('/login')
+        }
+
 
        } catch (error) {
         setMessage(error.res?.data?.msg || "Something went wrong");
@@ -53,7 +56,7 @@ const LoginCom1 = () => {
                        <span className="me">Remember me</span>
                     </div>
                     <input type="submit" value="Login" className="login-button"/><br />
-                    <p style={{textAlign: 'center', fontSize: '10px', marginTop: '0px'}}>{msg}</p>
+                    {/* <p style={{textAlign: 'center', fontSize: '10px', marginTop: '0px'}}>{msg}</p> */}
                     <Link to="/request_otp" className="forgot">Forgot Password?</Link>
                 </form>
             </div>
