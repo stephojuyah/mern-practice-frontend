@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const RegisterCom1 = () => {
 
-  const navigate = useNavigate
+  const navigate = useNavigate()
 
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -52,7 +52,9 @@ const RegisterCom1 = () => {
 
         const data = await res.json();
         setMessage(data.msg || "Registration successful");
+        console.log(data.status)
         if (data.status === 'ok') {
+          console.log("it got here")
             setTimeout(() => navigate('/login'), 1500);
         } else {
             navigate('/register')
@@ -78,10 +80,10 @@ const RegisterCom1 = () => {
                     <input value={password} onChange={(e) => {setPassword(e.target.value); setMessage("")}} className='input-box' type="password" name='password' placeholder='Password' required/><br />
                     <input value={repeatpassword} onChange={(e) => {setRepeatPassword(e.target.value); setMessage("")}} className='input-box' type="password" name='password' placeholder='Confirm password' required/>
                     <p style={{textAlign: 'center', fontSize: '10px', marginTop: '0px'}}>{msg}</p>
-                    <input checked={agree} onChange={(e) => setAgree(e.target.checked)} className='create-link' type="submit" value='Create account'/>
+                    <input className='create-link' type="submit" value='Create account'/>
                     {/* <a href="" className='create-link'>Create account</a> */}
                     <div className='check1'>
-                        <input className='check-button' type="checkbox" required/>
+                        <input checked={agree} onChange={(e) => setAgree(e.target.checked)} className='check-button' type="checkbox" required/>
                         <span className='policy'>I accept the Terms of Use and acknowledge the <a href=''>Privacy Policy</a></span>
                     </div>
                 </form>

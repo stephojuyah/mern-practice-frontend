@@ -1,9 +1,20 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
 import "../../styles/dash.css"
 
 const DashCom1 = () => {
     const [note, setNote] = useState('');
+    const [username, setUsername] = useState("Jane Doe")
     const [message, setMessage] = useState('')
+
+    useEffect(() => {
+        const user = localStorage.getItem("userinfo")
+        const person = JSON.parse(user)
+        console.log(person.name)
+  
+        setUsername(person.name)
+    }, {})
+
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -28,7 +39,7 @@ const DashCom1 = () => {
                 <div className="section">
                     <div><span className='scrib-home'>Scrabble</span></div>
                     <div className="main">
-                        <h2 className="home-welcome">Welcome back, <br />Jane Doe</h2>
+                        <h2 className="home-welcome">Welcome back, <br />{username}</h2>
                         <form onSubmit={handleSubmit} className="note-form">
                             <textarea className='note' placeholder="Leave a note" onChange={handleChange} value={note} required></textarea><br />
                             <input className='submit-note' type="submit" value='Submit Note' />

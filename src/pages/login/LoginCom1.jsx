@@ -29,6 +29,23 @@ const LoginCom1 = () => {
 
         const data = await res.json();
         setMessage(data.msg || "Login successful");
+
+        console.log(data.token)
+
+        const name = data.user.name
+
+        console.log(name)
+
+        const userinfo = {
+            token : data.token,
+            name: name
+        }
+
+        localStorage.setItem("userinfo", JSON.stringify(userinfo))
+
+        const token = localStorage.getItem("token")
+        console.log(token)
+
         if (data.status === 'Success') {
             setTimeout(() => navigate('/home'), 2000);
         } else {
