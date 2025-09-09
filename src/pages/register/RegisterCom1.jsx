@@ -61,7 +61,7 @@ const RegisterCom1 = () => {
         }
 
     } catch (error) {
-      setMessage(err.res?.data?.msg || "Something went wrong");
+      setMessage(err.res.data.msg || "Something went wrong");
     }
   };
 

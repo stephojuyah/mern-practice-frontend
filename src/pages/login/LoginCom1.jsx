@@ -54,7 +54,7 @@ const LoginCom1 = () => {
 
 
        } catch (error) {
-        setMessage(error.res?.data?.msg || "Something went wrong");
+        setMessage(error.res.data.msg || "Something went wrong");
        }
    }
 
@@ -73,7 +73,7 @@ const LoginCom1 = () => {
                        <span className="me">Remember me</span>
                     </div>
                     <input type="submit" value="Login" className="login-button"/><br />
-                    {/* <p style={{textAlign: 'center', fontSize: '10px', marginTop: '0px'}}>{msg}</p> */}
+                    <p style={{textAlign: 'center', fontSize: '10px', marginTop: '0px'}}>{msg}</p> 
                     <Link to="/request_otp" className="forgot">Forgot Password?</Link>
                 </form>
             </div>

@@ -1,24 +1,27 @@
 import { useState, useEffect } from "react"
 import "../../styles/dash.css"
+import { Navigate } from "react-router-dom";
 
 const DashCom1 = () => {
     const [note, setNote] = useState('');
     const [username, setUsername] = useState("Jane Doe")
     const [message, setMessage] = useState('')
+    // const navigate = useNavigate()
 
     useEffect(() => {
         const user = localStorage.getItem("userinfo")
         const person = JSON.parse(user)
-        console.log(person.name)
+
+        // console.log(person.name)
   
         setUsername(person.name)
-    }, {})
+    }, [])
 
 
 
     const handleSubmit = (e) => {
         e.preventDefault();
-        setMessage('Note submitted successfuly');
+        setMessage('Note submitted successfully');
         setNote('');
     }
 
@@ -27,12 +30,13 @@ const DashCom1 = () => {
         if (message) setMessage('');
     };
 
+    const user = localStorage.getItem("userinfo")
 
 
-    
-
-
-    return (
+    if (!user){
+        return(<Navigate to = "/login" replace />);
+    } else {
+            return (
         <>
         <div className="current-page">
             <div className="home-page">
@@ -61,6 +65,12 @@ const DashCom1 = () => {
         </>
 
     )
+    }
+
+    
+
+
+
 }
 export default DashCom1
 
