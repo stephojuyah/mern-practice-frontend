@@ -7,7 +7,7 @@ const ResetPasswordCom1 = () => {
     const navigate = useNavigate()
 
     const [otp, setOtp] = useState('')
-    const [password, setPassword] = useState('')
+    const [newpassword, setNewPassword] = useState('')
     const [msg, setMessage] = useState('')
 
 
@@ -21,7 +21,9 @@ const ResetPasswordCom1 = () => {
                 "Content-Type": "application/json",
             },
             body: JSON.stringify({
-                password,
+                email,
+                token,
+                newpassword,
                 otp,
             }),
         });
@@ -30,12 +32,12 @@ const ResetPasswordCom1 = () => {
         setMessage(data.msg || `Password reset successful`);
         if (data.status === 'success') {
             navigate('/login')
-        } else {
-            navigate('/reset_password')
-        }
+        } //else {
+            // alert(data.msg || 'Reset failed');
+    //    }
 
         } catch (error) {
-        setMessage(error.res?.data?.msg || "Something went wrong");
+        setMessage(error.res.data.msg || "Something went wrong");
        }
     }
 
@@ -45,8 +47,8 @@ const ResetPasswordCom1 = () => {
                 <div className='reset-form'>
                     <form onSubmit={handleSubmit} className='form-g'>
                         <h2 className='reset'>Reset Password</h2>
-                        <input type="text" className='otp-input' placeholder='Enter OTP' value={otp} onChange={(e) => setOtp(e.target.value)} required/><br />
-                        <input type="password" className='otp-input' placeholder='New password' value={password} onChange={(e) => setPassword(e.target.value)} required/><br />
+                        <input type="text" className='otp-input' placeholder='Enter OTP' value={otp} onChange={(e) => {setOtp(e.target.value) ; setMessage("")}} required/><br />
+                        <input type="password" className='otp-input' placeholder='New password' value={newpassword} onChange={(e) => {setNewPassword(e.target.value); setMessage("")}} required/><br />
                         <p style={{textAlign: 'center', fontSize: '10px', marginTop: '0px'}}>{msg}</p>
                         <input type="submit" value='Reset Password' className='reset-button'/>
                    </form>

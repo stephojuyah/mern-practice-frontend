@@ -28,6 +28,12 @@ const RequestReset = () => {
         });
 
         const data = await res.json();
+
+        if (data.token) {
+            localStorage.setItem('reset_token', data.token);
+        }
+        localStorage.setItem('reset_email', email);
+
         setMessage(data.msg || `If this email is registered, an OTP will be sent to ${email}`);
         if (data.status === 'ok') {
             setTimeout(() => navigate('/reset_password'), 3000);
@@ -37,7 +43,7 @@ const RequestReset = () => {
         
 
        } catch (error) {
-        setMessage(error.res?.data?.msg || "Something went wrong");
+        setMessage(error.res.data.msg || "Something went wrong");
        }
 
     };
