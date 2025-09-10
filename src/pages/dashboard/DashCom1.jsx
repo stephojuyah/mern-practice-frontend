@@ -36,7 +36,7 @@ const DashCom1 = () => {
     if (!user){
         return(<Navigate to = "/login" replace />);
     } else {
-            return (
+    return (
         <>
         <div className="current-page">
             <div className="home-page">

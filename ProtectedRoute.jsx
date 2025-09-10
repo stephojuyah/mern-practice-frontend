@@ -12,6 +12,9 @@ const ProtectedRoute = ({ children }) => {
     }
 
     return children; // otherwise, show protected page
+
+
+    
 };
 
 export default ProtectedRoute;

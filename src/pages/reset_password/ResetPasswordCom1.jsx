@@ -1,10 +1,22 @@
 import '../../styles/reset_password.css'
+import { useEffect } from "react";
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
 const ResetPasswordCom1 = () => {
 
     const navigate = useNavigate()
+
+    useEffect(() => {
+       const token = localStorage.getItem("reset_token");
+       const email = localStorage.getItem("reset_email");
+
+    //    console.log("Token:", token, "Email:", email);
+
+       if (!token || !email) {
+          navigate("/request_reset");
+        }
+    }, []);
 
     const [otp, setOtp] = useState('')
     const [newpassword, setNewPassword] = useState('')
@@ -14,6 +26,10 @@ const ResetPasswordCom1 = () => {
     const handleSubmit = async(e) => {
         e.preventDefault()
 
+        const token = localStorage.getItem("reset_token");
+        const email = localStorage.getItem("reset_email");
+
+
     try {
          const res = await fetch("http://localhost:5000/auth/reset_password", {
             method: "POST" ,
@@ -22,19 +38,20 @@ const ResetPasswordCom1 = () => {
             },
             body: JSON.stringify({
                 email,
-                token,
+                token, 
                 newpassword,
                 otp,
             }),
         });
 
+
         const data = await res.json();
         setMessage(data.msg || `Password reset successful`);
-        if (data.status === 'success') {
-            navigate('/login')
-        } //else {
-            // alert(data.msg || 'Reset failed');
-    //    }
+        if (data.status === 'ok') {
+            setTimeout(() => navigate('/login'), 2000);
+        } else {
+            alert(data.msg || 'Reset failed');
+       }
 
         } catch (error) {
         setMessage(error.res.data.msg || "Something went wrong");
