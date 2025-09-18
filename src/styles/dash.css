@@ -6,6 +6,10 @@
     color: white;
 }
 
+.current-page {
+    position: relative;
+}
+
 .section {
     width: 80%;
     padding-left: 50px;
@@ -38,7 +42,19 @@ a.nav-link {
     padding: 10px 40px;
 }
 
+button.nav-link {
+    text-decoration: none;
+    color: white;
+    padding: 10px 40px;
+}
+
+
+
 a.nav-link:hover {
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+button.nav-link:hover {
     background-color: rgba(0, 0, 0, 0.4);
 }
 

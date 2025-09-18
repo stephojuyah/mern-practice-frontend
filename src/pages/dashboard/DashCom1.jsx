@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react"
+import { useNavigate } from "react-router-dom";
 import "../../styles/dash.css"
 import "../../styles/logoutpopup.css"
 import { Navigate } from "react-router-dom";
@@ -7,7 +8,9 @@ const DashCom1 = () => {
     const [note, setNote] = useState('');
     const [username, setUsername] = useState("Jane Doe")
     const [message, setMessage] = useState('')
-    // const navigate = useNavigate()
+    const [showLogoutPopup, setShowLogoutPopup] = useState(false);
+
+    const navigate = useNavigate()
 
     useEffect(() => {
         const user = localStorage.getItem("userinfo")
@@ -17,6 +20,12 @@ const DashCom1 = () => {
   
         setUsername(person.name)
     }, [])
+
+    const handleLogout = () => {
+    localStorage.clear();
+    navigate("/login");
+    };
+
 
 
 
@@ -40,6 +49,15 @@ const DashCom1 = () => {
     return (
         <>
         <div className="current-page">
+            {showLogoutPopup && (
+                <div className="logout-popup">
+                <div className="popup-box">
+                    <p className="sure">Are you sure you want to logout?</p>
+                    <a href="" className="yes-link" onClick={() => handleLogout()}>Yes</a>
+                    <a href="" className="no-link" onClick={() => setShowLogoutPopup(false)}>Cancel</a>
+                </div>
+                </div>
+            )}
             <div className="home-page">
                 <div className="section">
                     <div><span className='scrib-home'>Scrabble</span></div>
@@ -58,7 +76,7 @@ const DashCom1 = () => {
                         <a href="" className="nav-link">View Profile</a>
                         <a href="" className="nav-link">View Notes</a>
                         <a href="" className="nav-link">Settings</a>
-                        <a href="" className="nav-link">Log Out</a>
+                        <button onClick={() => setShowLogoutPopup(true)} className="nav-link">Log Out</button>
                     </nav>
                 </aside>
             </div>
