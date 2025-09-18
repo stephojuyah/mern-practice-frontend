@@ -31,8 +31,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/register" element={<Register />} />
         <Route path='/login' element={<Login />} />
         <Route path='/request_otp' element={<RequestReset />} />
-        <Route path='/reset_password' element={<ProtectedRoute><ResetPassword /></ProtectedRoute>} />
-
+        <Route path='/reset_password' element={<ResetPassword />} />
         <Route path='/home' element={<ProtectedRoute><Dash /></ProtectedRoute>} />
         
       </Routes>   

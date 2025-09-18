@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import "../../styles/dash.css"
+import "../../styles/logoutpopup.css"
 import { Navigate } from "react-router-dom";
 
 const DashCom1 = () => {

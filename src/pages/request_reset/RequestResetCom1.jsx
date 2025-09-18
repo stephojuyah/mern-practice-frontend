@@ -36,8 +36,8 @@ const RequestReset = () => {
 
         setMessage(data.msg || `If this email is registered, an OTP will be sent to ${email}`);
         if (data.status === 'ok') {
-            localStorage.setItem("token", res.data.token);
-            setTimeout(() => navigate('/reset_password'), 3000);
+            // localStorage.setItem("token", res.data.token);
+            setTimeout(() => navigate('/reset_password'), 2000);
         } else {
             navigate('/request_otp')
         }
