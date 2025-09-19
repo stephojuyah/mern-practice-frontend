@@ -67,6 +67,7 @@ span.scrib-home {
 
 aside.side-bar {
     background-color: rgba(0, 0, 0, 0.15);
+    position: relative;
 }
 
 textarea {
@@ -109,7 +110,7 @@ input.submit-note:hover {
 }
 
 .down-buttons {
-    position: fixed;
+    position: absolute;
     width: 100%;
     bottom: 20px;
     display: flex;

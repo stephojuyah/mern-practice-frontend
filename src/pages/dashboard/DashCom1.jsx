@@ -21,10 +21,31 @@ const DashCom1 = () => {
         setUsername(person.name)
     }, [])
 
-    const handleLogout = () => {
-    localStorage.clear();
-    navigate("/login");
+    // const handleLogout = () => {
+    // localStorage.clear();
+    // navigate("/login");
+    // };
+
+    const handleLogout = async () => {
+       const user = JSON.parse(localStorage.getItem("userinfo"));
+       const token = user.token;
+
+       try {
+          await fetch("http://localhost:5000/logout", {
+          method: "POST",
+          headers: {
+              "Content-Type": "application/json",
+            },
+          body: JSON.stringify({ token }),
+        });
+
+        localStorage.clear();
+        navigate("/login");
+    } catch (error) {
+        console.error("Logout failed", error);
+       }
     };
+
 
 
 
