@@ -74,6 +74,7 @@ const DashCom1 = () => {
               <> <div className="overlay"></div>
               <div className="logout-popup">
                 <div className="popup-box">
+                    <h2 className="head-log">Logout</h2>
                     <p className="sure">Are you sure you want to logout?</p>
                     <div className="button-click">
                       <button className="yes-link pop-link" onClick={() => handleLogout()}>Yes</button>

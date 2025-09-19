@@ -15,10 +15,10 @@
     /* background-color: #537179; */
     display: flex;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
     background-color: white;
     width: 400px;
-    height: 200px;
+    height: 280px;
     border-radius: 25px;
     animation: fadeIn 0.3s ease-out forwards;
     z-index: 20;
@@ -61,5 +61,8 @@ div.button-click {
   }
 }
 
-
+.head-log {
+    margin-top: 50px;
+    text-align: center;
+}
 
