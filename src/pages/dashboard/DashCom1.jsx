@@ -2,6 +2,7 @@ import { useState, useEffect } from "react"
 import { useNavigate } from "react-router-dom";
 import "../../styles/dash.css"
 import "../../styles/logoutpopup.css"
+import "../../styles/deletepopup.css"
 import { Navigate } from "react-router-dom";
 
 const DashCom1 = () => {
@@ -9,6 +10,7 @@ const DashCom1 = () => {
     const [username, setUsername] = useState("Jane Doe")
     const [message, setMessage] = useState('')
     const [showLogoutPopup, setShowLogoutPopup] = useState(false);
+    const [showDeletePopup, setShowDeletePopup] = useState(false);
 
     const navigate = useNavigate()
 
@@ -84,6 +86,20 @@ const DashCom1 = () => {
               </div>
               </>
             )}
+            {showDeletePopup && (
+              <> <div className="overlay"></div>
+              <div className="delete-popup">
+                <div className="delete-popup-box">
+                    <h2 className="head-log">Delete account</h2>
+                    <p className="sure">Are you sure you want to delete your account?</p>
+                    <div className="button-click">
+                      <button className="yess-link pop-link" onClick={() => handleDelete()}>Yes</button>
+                      <button className="no-link pop-link" onClick={() => setShowDeletePopup(false)}>Cancel</button>
+                    </div>
+                </div>
+              </div>
+              </>
+            )}
             <div className="home-page">
                 <div className="section">
                     <div><span className='scrib-home'>Scrabble</span></div>
@@ -104,7 +120,7 @@ const DashCom1 = () => {
                         <a href="" className="nav-link">Settings</a>
                         <div className="down-buttons">
                           <button onClick={() => setShowLogoutPopup(true)} className="bbo logout-button">Log Out</button>
-                          <button className="bbo delete-link">Delete account</button>
+                          <button onClick={() => setShowDeletePopup(true)} className="bbo delete-link">Delete account</button>
                         </div>
                     </nav>
                 </aside>

@@ -8,7 +8,12 @@
   z-index: 10;
 }
 
-.logout-popup {
+div.delete-popup-box {
+    padding-left: 60px;
+    padding-right: 60px;
+    text-align: center;
+}
+.delete-popup {
     position: fixed;
     top: 20%;
     left: 35%;
@@ -48,6 +53,10 @@ div.button-click {
     display: flex;
     justify-content: space-evenly;
 
+}
+
+.yess-link {
+    background-color: rgba(255, 0, 0, 0.65);
 }
 
 @keyframes fadeIn {
