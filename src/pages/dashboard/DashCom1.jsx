@@ -80,7 +80,10 @@ const DashCom1 = () => {
                         <a href="" className="nav-link">View Profile</a>
                         <a href="" className="nav-link">View Notes</a>
                         <a href="" className="nav-link">Settings</a>
-                        <button onClick={() => setShowLogoutPopup(true)} className="nav-link">Log Out</button>
+                        <div className="down-buttons">
+                          <button onClick={() => setShowLogoutPopup(true)} className="bbo logout-button">Log Out</button>
+                          <button className="bbo delete-link">Delete account</button>
+                        </div>
                     </nav>
                 </aside>
             </div>
