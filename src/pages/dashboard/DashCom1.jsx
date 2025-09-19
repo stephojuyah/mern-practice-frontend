@@ -48,9 +48,37 @@ const DashCom1 = () => {
        }
     };
 
+    const handleDelete = async () => {
+
+      const token = localStorage.getItem('token');
+      if (!token) return alert('No user logged in');
+
+      try {
+        const res = await fetch('http://localhost:5000/delete_account', {
+          method: 'DELETE',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ token }),
+        });
+
+        const data = await res.json();
+
+        if (data.status === 'ok') {
+          alert('Account deleted successfully');
+          localStorage.clear();
+          window.location.href = '/register'; // or '/login' or home
+        } else {
+          alert(data.msg || 'Something went wrong');
+        }
+      } catch (err) {
+        console.error('Delete error:', err);
+        alert('Failed to delete account');
+      }
 
 
-
+ 
+    };
 
     const handleSubmit = (e) => {
         e.preventDefault();
