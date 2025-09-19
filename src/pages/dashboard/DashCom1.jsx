@@ -50,13 +50,17 @@ const DashCom1 = () => {
         <>
         <div className="current-page">
             {showLogoutPopup && (
-                <div className="logout-popup">
+              <> <div className="overlay"></div>
+              <div className="logout-popup">
                 <div className="popup-box">
                     <p className="sure">Are you sure you want to logout?</p>
-                    <a href="" className="yes-link" onClick={() => handleLogout()}>Yes</a>
-                    <a href="" className="no-link" onClick={() => setShowLogoutPopup(false)}>Cancel</a>
+                    <div className="button-click">
+                      <button className="yes-link pop-link" onClick={() => handleLogout()}>Yes</button>
+                      <button className="no-link pop-link" onClick={() => setShowLogoutPopup(false)}>Cancel</button>
+                    </div>
                 </div>
-                </div>
+              </div>
+              </>
             )}
             <div className="home-page">
                 <div className="section">
