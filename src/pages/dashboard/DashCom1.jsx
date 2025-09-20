@@ -49,36 +49,32 @@ const DashCom1 = () => {
     };
 
     const handleDelete = async () => {
+        const user = JSON.parse(localStorage.getItem("userinfo"));
+        const token = user.token;
 
-      const token = localStorage.getItem('token');
-      if (!token) return alert('No user logged in');
+        try {
+            const response = await fetch("http://localhost:5000/auth/delete_account", {
+                method: "DELETE",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ token }),
+            });
 
-      try {
-        const res = await fetch('http://localhost:5000/delete_account', {
-          method: 'DELETE',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify({ token }),
-        });
+            const data = await response.json();
 
-        const data = await res.json();
-
-        if (data.status === 'ok') {
-          alert('Account deleted successfully');
-          localStorage.clear();
-          window.location.href = '/register'; // or '/login' or home
-        } else {
-          alert(data.msg || 'Something went wrong');
+            if (data.status === 'ok') {
+                localStorage.clear();
+                navigate("/register");
+            } else {
+                console.error("Delete failed:", data.msg);
+                // Optionally show error message to user
+            }
+        } catch (error) {
+            console.error("Delete account failed", error);
         }
-      } catch (err) {
-        console.error('Delete error:', err);
-        alert('Failed to delete account');
-      }
-
-
- 
     };
+
 
     const handleSubmit = (e) => {
         e.preventDefault();
