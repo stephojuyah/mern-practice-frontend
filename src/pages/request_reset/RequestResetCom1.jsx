@@ -39,6 +39,7 @@ const RequestReset = () => {
             // localStorage.setItem("token", res.data.token);
             setTimeout(() => navigate('/reset_password'), 2000);
         } else {
+            setEmail("")
             navigate('/request_otp')
         }
         
@@ -56,7 +57,7 @@ const RequestReset = () => {
             <div className='forgot-form'>
                 <form onSubmit={handleSubmit} className='form-f' >
                     <h2 className='forgot-text'>Forgot your password?</h2>
-                    <input className='forgot-input' type="email" placeholder='Enter your Email' value={email} onChange={(e) => setEmail(e.target.value)} required/><br />
+                    <input className='forgot-input' type="email" placeholder='Enter your Email' value={email} onChange={(e) => {setEmail(e.target.value); setMessage("")}} required/><br />
                     <p style={{textAlign: 'center', fontSize: '10px', marginTop: '0px'}} className="feedback-message">{msg}</p>
                     <input className='resend-button' type="submit" value='Send OTP'/>
                 </form>

@@ -33,7 +33,7 @@ const DashCom1 = () => {
        const token = user.token;
 
        try {
-          await fetch("http://localhost:5000/logout", {
+          await fetch("http://localhost:5000/auth/logout", {
           method: "POST",
           headers: {
               "Content-Type": "application/json",
