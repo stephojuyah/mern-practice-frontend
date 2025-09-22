@@ -5,6 +5,7 @@ body {
 .contain {
     color: white;
     background-color: #537179;
+    height: 100vh;
 }
 
 .header-container {
@@ -75,12 +76,13 @@ span.scrib {
     /* background: radial-gradient(white, grey); */
     /* background: radial-gradient(grey, white); */
     /* background-color: grey; */
-    height: 51.2vh;
+    /* height: 51.2vh; */
 }
 
-.up {
+p.up {
     font-size: 80px;
     line-height: 0px;
+    margin: 40px;
 }
 
 span.aside {
@@ -94,9 +96,87 @@ span.aside {
 }
 
 .main2 {
-    margin-top: 80px;
+    margin-top: 30px;
     display: flex;
     justify-content: center;
     gap: 10px;
 }
+
+div.main {
+    margin: 30px;
+    height: 150px;
+}
+
+@media (max-width: 1030px) {
+  p.up {
+    font-size: 50px;
+  }
+
+  .tagline {
+    font-size: 19px;
+  }
+
+  .home-container {
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 733px) {
+  p.up {
+    display: flex;
+    flex-direction: column;
+    gap: 55px;
+  }
+
+  nav.navbar {
+    display: none;
+  }
+
+  .home-container {
+    padding-top: 60px;
+  }
+
+  span.scrib {
+    font-size: 35px;
+  }
+}
+
+@media (max-width: 551px) {
+
+    .home-container {
+        padding-left: 0px;
+        padding-right: 0px;
+        padding-top: 20%;
+        
+    }
+
+  p.up {
+    font-size: 35px;
+    margin-bottom: 20px;
+    gap: 60px;
+  }
+
+  .tagline {
+    font-size: 13px;
+  }
+
+  .main2 {
+    margin-top: 18px;
+  }
+
+  .main {
+    margin: 15px;
+    height: 0px;
+  }
+
+  span.aside {
+    font-size: 80px;
+    padding-bottom: 25px;
+  }
+
+}
+
+
+
+
 
