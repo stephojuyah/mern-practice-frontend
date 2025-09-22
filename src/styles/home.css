@@ -1,12 +1,19 @@
 body {
     margin: 0;
     height: 100%;
+    background-color: #537179; /* Add fallback background */
+}
+
+html {
+    height: 100%;
+    background-color: #537179; /* Ensure full coverage */
 }
 
 .contain {
     color: white;
     background-color: #537179;
-    height: 100vh;
+    min-height: 100vh; /* Changed from height to min-height */
+    min-height: 100dvh; /* Dynamic viewport height for better mobile support */
 }
 
 .header-container {
@@ -27,12 +34,13 @@ a.linke {
     text-decoration: none;
     /* padding: 15px 10px; */
     padding-top: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 17px;
     padding-left: 10px;
     padding-right: 10px;
     color: white;
     border-radius: 5px;
-    height: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 20px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     width: 100px;
     text-align: center;
     background-color: rgba(0, 0, 0, 0.3);
@@ -48,7 +56,7 @@ a.linke.started {
     /* padding: 15px 25px; */
     /* padding-top: 10px; */
     padding-top: 15px;
-    padding-bottom: 20px;
+    padding-bottom: 17px;
     padding-left: 10px;
     padding-right: 10px;
     color: white;
@@ -74,10 +82,24 @@ span.scrib {
 .home-container {
     padding: 100px 50px;
     text-align: center;
+    flex-grow: 1; /* Allow container to grow and fill space */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     /* background: radial-gradient(white, grey); */
     /* background: radial-gradient(grey, white); */
     /* background-color: grey; */
     /* height: 51.2vh; */
+}
+
+/* Ensure contain acts as a flex container */
+.contain {
+    color: white;
+    background-color: #537179;
+    min-height: 100vh;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
 }
 
 p.up {
@@ -153,14 +175,10 @@ div.main {
 }
 
 @media (max-width: 551px) {
-
     .home-container {
         padding-left: 0px;
         padding-right: 0px;
-        padding-top: 27%;
-        
     }
-
 
   p.up {
     font-size: 35px;
@@ -172,7 +190,6 @@ div.main {
     font-size: 13px;
     margin-bottom: 60px;
   }
-
 
   .main {
     margin: 15px;
@@ -188,11 +205,11 @@ div.main {
   a.linke {
     font-size: 13px;
     width: 90px;
-    height: 14px;
+    height: 17px;
   }
 
   a.linke.started {
-    height: 14px;
+    height: 17px;
   }
 
   span.scrib {
@@ -202,10 +219,20 @@ div.main {
   .header-container {
     padding: 30px;
   }
-
 }
 
+/* Additional mobile viewport fixes */
+@media (max-width: 768px) {
+    .contain {
+        min-height: 100vh;
+        min-height: 100dvh; /* Better mobile support */
+        min-height: calc(100vh + 1px); /* Fallback for older browsers */
+    }
+}
 
-
-
-
+/* Ensure no white space on very small screens */
+@supports (height: 100dvh) {
+    .contain {
+        min-height: 100dvh;
+    }
+}
