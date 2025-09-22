@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    height: 100%;
 }
 
 .contain {
@@ -9,7 +10,7 @@ body {
 }
 
 .header-container {
-    position: sticky;
+    /* position: sticky; */
     top: 0;
     padding: 20px 50px;
     display: flex;
@@ -48,8 +49,8 @@ a.linke.started {
     /* padding-top: 10px; */
     padding-top: 15px;
     padding-bottom: 20px;
-    padding-left: 25px;
-    padding-right: 25px;
+    padding-left: 10px;
+    padding-right: 10px;
     color: white;
     border-radius: 5px;
     height: 20px;
@@ -96,7 +97,7 @@ span.aside {
 }
 
 .main2 {
-    margin-top: 30px;
+    /* margin-top: 30px; */
     display: flex;
     justify-content: center;
     gap: 10px;
@@ -119,13 +120,18 @@ div.main {
   .home-container {
     padding-top: 50px;
   }
+
 }
 
 @media (max-width: 733px) {
-  p.up {
-    display: flex;
-    flex-direction: column;
-    gap: 55px;
+    span.scrib {
+      font-size: 45px;
+    }
+
+    p.up {
+        display: flex;
+        flex-direction: column;
+        gap: 75px;
   }
 
   nav.navbar {
@@ -136,8 +142,13 @@ div.main {
     padding-top: 60px;
   }
 
-  span.scrib {
-    font-size: 35px;
+  .tagline {
+    margin-bottom: 100px;
+  }
+
+  span.aside {
+    font-size: 100px;
+    padding-bottom: 20px;
   }
 }
 
@@ -146,9 +157,10 @@ div.main {
     .home-container {
         padding-left: 0px;
         padding-right: 0px;
-        padding-top: 20%;
+        padding-top: 27%;
         
     }
+
 
   p.up {
     font-size: 35px;
@@ -158,20 +170,37 @@ div.main {
 
   .tagline {
     font-size: 13px;
+    margin-bottom: 60px;
   }
 
-  .main2 {
-    margin-top: 18px;
-  }
 
   .main {
     margin: 15px;
     height: 0px;
+    /* border: 1px solid red; */
   }
 
   span.aside {
     font-size: 80px;
     padding-bottom: 25px;
+  }
+
+  a.linke {
+    font-size: 13px;
+    width: 90px;
+    height: 14px;
+  }
+
+  a.linke.started {
+    height: 14px;
+  }
+
+  span.scrib {
+    font-size: 30px;
+  }
+
+  .header-container {
+    padding: 30px;
   }
 
 }
