@@ -21,6 +21,7 @@ const RegisterCom1 = () => {
       setMessage("Passwords do not match");
       setPassword("");
       setRepeatPassword("");
+      setAgree(false);
       return;
 
     }
