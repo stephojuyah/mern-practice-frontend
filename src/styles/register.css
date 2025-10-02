@@ -7,8 +7,8 @@
     /* padding: 10% 50px; */
     text-align: center;
     background-color: #537179;
-    /* background: radial-gradient(white, grey); */
 }
+
 
 form.form2 {
     background-color: rgba(66, 88, 94, 0.6);
@@ -18,7 +18,7 @@ form.form2 {
     padding-bottom: 40px;
     padding-left: 50px;
     padding-right: 50px;
-    width: 330px;
+    max-width: 330px;
     margin-top: 15px;
     height: 500px
 }
@@ -84,4 +84,13 @@ p.have {
 
 h2.get {
     margin-bottom: 5px;
+}
+
+form.form2 {
+  background-color: rgba(66, 88, 94, 0.6);
+  border-radius: 20px;
+  padding: 20px 50px 40px 50px;
+  max-width: 330px;
+  margin-top: 15px;
+  height: auto;
 }

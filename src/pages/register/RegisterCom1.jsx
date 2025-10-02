@@ -70,7 +70,6 @@ const RegisterCom1 = () => {
     return (
         <>
         <div className='register-container'>
-            <div className='form'>
                 <form className='form2' onSubmit={handleSubmit}>
                     <h2 className='get'>Getting Started</h2>
                     <p className='have'>Already have an account? <Link to="/login">Login</Link></p>
@@ -87,8 +86,6 @@ const RegisterCom1 = () => {
                         <span className='policy'>I accept the Terms of Use and acknowledge the <a href=''>Privacy Policy</a></span>
                     </div>
                 </form>
-            </div>
-
         </div>
         </>
     )
